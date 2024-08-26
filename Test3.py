@@ -13,9 +13,15 @@ if age_client < 18:
 else:
     place_cinema = 12
 print("Votre place sera à {}€".format(place_cinema))
-popcorn = int(input("Souhaitez-vous ajouter du popcorn? 1=oui/0=non : "))
-if popcorn == 1:
-    place_cinema += 5
-    print("Votre total est de {}€".format(place_cinema))
-else:
-    print("Votre total est de {}€".format(place_cinema))
+popcorn_answer = 0
+while popcorn_answer == 0:
+    popcorn = input("Souhaitez-vous ajouter du popcorn? (Oui, Non) ")
+    popcorn_answer += 1
+    if popcorn == "Oui":
+        place_cinema += 5
+        print("Votre total est de {}€".format(place_cinema))
+    elif popcorn == "Non":
+        print("Votre total est de {}€".format(place_cinema))
+    else:
+        popcorn_answer -= 1
+
